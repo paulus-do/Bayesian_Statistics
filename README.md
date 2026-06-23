@@ -44,9 +44,9 @@ b_i \mid \beta, \Sigma_b \sim \mathcal{N}(\beta,\Sigma_b),
 The conjugate covariance model uses
 
 ```math
-\sigma_\varepsilon^2 \sim \operatorname{InvGamma}(c_\varepsilon,d_\varepsilon),
+\sigma_\varepsilon^2 \sim \mathrm{InvGamma}(c_\varepsilon,d_\varepsilon),
 \qquad
-\Sigma_b \sim \operatorname{InvWishart}(\eta_b,S_0).
+\Sigma_b \sim \mathrm{InvWishart}(\eta_b,S_0).
 ```
 
 In the implementation, `S_b` is supplied as a scale template and the actual inverse-Wishart scale is `S_0 = eta_b * S_b`.
@@ -106,7 +106,7 @@ The residual variance update in `conditionals.sigma_e_draw` is
 ```math
 v_\varepsilon \mid y,b
 \sim
-\operatorname{InvGamma}\left(
+\mathrm{InvGamma}\left(
 c_\varepsilon+\frac{m}{2},
 d_\varepsilon+\frac{1}{2}\sum_{i=1}^{n}
 \lVert y_i-X_i b_i\rVert_2^2
@@ -120,7 +120,7 @@ The conjugate covariance update in `conditionals.sigma_b_draw` is
 ```math
 \Sigma_b \mid b,\beta
 \sim
-\operatorname{InvWishart}\left(
+\mathrm{InvWishart}\left(
 \eta_b+n,\ 
 \eta_b S_b + \sum_{i=1}^{n}(b_i-\beta)(b_i-\beta)^\top
 \right).
