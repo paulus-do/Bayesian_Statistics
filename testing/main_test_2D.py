@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from time import perf_counter
 import argparse
-from src.data_import import data, data_2D
+from src.data_import import load_and_prepare_data, load_and_prepare_data_2D
 from src.MCMC import run_mcmc
 from src.MCMC_MH import run_mcmc_mh
 from src.FEMBasis import FEMBasis2D
@@ -268,6 +268,9 @@ def plot_variance_traces(ax, samples):
 
 # Usage in your main script
 if __name__ == "__main__":
+    data = load_and_prepare_data()
+    data_2D = load_and_prepare_data_2D()
+
     # Parse command line arguments
     args = parse_arguments()
     

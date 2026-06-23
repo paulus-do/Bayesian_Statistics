@@ -1,10 +1,12 @@
 import numpy as np
-from src.data_import import data
+from src.data_import import load_and_prepare_data
 from src.BSpline import BSplineBasis
 from src.MCMC import run_mcmc
 
 
 if __name__ == "__main__":
+    data = load_and_prepare_data()
+
     # --- 1. Create B-Spline Basis ---
 
 

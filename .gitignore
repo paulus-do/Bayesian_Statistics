@@ -1,5 +1,12 @@
 data/
+results/
 fd_bayes/
 Literature/
-Code/__pycache__
-testing/__pycache__
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.DS_Store
+.venv/
+venv/

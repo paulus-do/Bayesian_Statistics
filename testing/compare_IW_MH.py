@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 import os
 import sys
-from src.data_import import data, data_2D
+from src.data_import import load_and_prepare_data_2D
 from src.MCMC import run_mcmc
 from src.MCMC_MH import run_mcmc_mh
 from src.FEMBasis import FEMBasis2D
@@ -46,6 +46,8 @@ def save_samples(samples, filename, results_dir='results'):
     print(f"✓ Saved samples to: {pickle_path}")
 
 if __name__ == "__main__":
+    data_2D = load_and_prepare_data_2D()
+
     # Create results directory at the very beginning
     results_dir = 'results'
     ensure_directory(results_dir)

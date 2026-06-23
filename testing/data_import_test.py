@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 import matplotlib.colors as mcolors
 import numpy as np
-from src.data_import import data, data_2D
+from src.data_import import load_and_prepare_data, load_and_prepare_data_2D
 from mpl_toolkits.mplot3d import Axes3D
 
 ##############################################################
@@ -353,6 +353,9 @@ def plot_temperature_3d_scatter_animated_simple(data, lat_range=(33, 53), lon_ra
     return ani
 
 if __name__ == "__main__":
+    data = load_and_prepare_data()
+    data_2D = load_and_prepare_data_2D()
+
     # First, let's debug the data structure
     print(f"Data type: {type(data)}")
     print(f"Data length: {len(data)}")

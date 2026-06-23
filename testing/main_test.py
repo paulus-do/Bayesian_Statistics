@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from src.data_import import data
+from src.data_import import load_and_prepare_data
 from src.BSpline import BSplineBasis
 from src.MCMC import run_mcmc
 import random
@@ -367,6 +367,8 @@ def plot_mean_avg(data, samples, spline_basis):
     plt.show()
 
 if __name__ == "__main__":
+    data = load_and_prepare_data()
+
      # --- 1. Create B-Spline Basis ---
 
     ############B-Spline Basis##############
